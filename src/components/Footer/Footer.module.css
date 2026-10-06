@@ -1,0 +1,34 @@
+.footer {
+  background: #1e1e1e;
+  color: #fff;
+  padding-top: 30px;
+}
+.footer_container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: space-around;
+  align-items: center;
+}
+.footer_bottom {
+  text-align: center;
+  padding: 15px;
+  border-top: 1px solid #444;
+  font-size: 0.8rem;
+}
+.div5_seccion {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.div5_divs {
+  width: fit-content;
+  max-width: 300px;
+  font-size: 15px;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  background-color: rgb(222, 221, 221);
+}

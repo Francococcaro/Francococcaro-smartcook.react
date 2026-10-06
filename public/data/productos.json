@@ -1,0 +1,51 @@
+[
+    {
+        "id": 1,
+        "nombre": "Pulled Pork",
+        "precio": 20000,
+        "stock": 22,
+        "imagen": "/images/platos/pork.jpg"
+    },
+    {
+        "id": 2,
+        "nombre": "Risotto",
+        "precio": 13500,
+        "stock": 50,
+        "imagen": "/images/platos/risoto.jpg"
+    },
+    {
+        "id": 3,
+        "nombre": "Tartas Individuales",
+        "precio": 9000,
+        "stock": 6,
+        "imagen": "/images/platos/tartas.jpg"
+    },
+    {
+        "id": 4,
+        "nombre": "Tortilla de Papa",
+        "precio": 7700,
+        "stock": 6,
+        "imagen": "/images/platos/tortilla.jpg"
+    },
+    {
+        "id": 5,
+        "nombre": "Vitel Tóne",
+        "precio": 15000,
+        "stock": 4,
+        "imagen": "/images/platos/vitel3.jpg"
+    },
+    {
+        "id": 6,
+        "nombre": "Pastel de Papa",
+        "precio": 12300,
+        "stock": 6,
+        "imagen": "/images/platos/pastelpapa2.jpg"
+    },
+    {
+        "id": 7,
+        "nombre": "Pulled Pork",
+        "precio": 20000,
+        "stock": 6,
+        "imagen": "/images/platos/pork.jpg"
+    }
+]

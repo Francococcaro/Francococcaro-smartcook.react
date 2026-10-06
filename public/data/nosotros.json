@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "imagen": "/images/avatares/avatar1.jpg",
+        "nombre": "Lionel Messi",
+        "cargo": "CEO",
+        "email": "lmessi@smartcook.com"
+    },
+    {
+        "id": 2,
+        "imagen": "/images/avatares/avatar2.jpg",
+        "nombre": "Susana Gimenez",
+        "cargo": "Chef",
+        "email": "sgimenez@smartcook.com"
+    },
+    {
+        "id": 3,
+        "imagen": "/images/avatares/avatar3.jpg",
+        "nombre": "Mirta Legrand",
+        "cargo": "Delivery",
+        "email": "mlegrand@smartcook.com"
+    }
+]

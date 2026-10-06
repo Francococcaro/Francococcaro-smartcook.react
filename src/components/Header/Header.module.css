@@ -1,0 +1,71 @@
+.header {
+  background-color: #dcf2ff;
+  padding: 10px;
+  text-align: center;
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.contenedor {
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+  color: #63565c;
+  text-decoration: none;
+}
+.img {
+  width: auto;
+  height: 100px;
+}
+.NavBar {
+  display: flex;
+  list-style: none;
+  font-size: 1.2rem;
+  color: #63565c;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.a {
+  list-style: none;
+  padding: 10px;
+  margin: 10px;
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: inherit;
+}
+.carrito {
+  list-style: none;
+  padding: 10px;
+  margin: 10px;
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid #f9cbc4;
+}
+
+@media (max-width: 391px) {
+  .header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    position: static;
+  }
+  .NavBar {
+    display: flex;
+    flex-direction: column;
+  }
+  
+}
+@media (max-width: 890px) {
+  .header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    position: static;
+  }
+}

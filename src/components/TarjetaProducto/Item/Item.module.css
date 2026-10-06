@@ -1,0 +1,37 @@
+.Item {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0;
+  text-align: center;
+  align-content: space-around;
+  border-radius: 10px;
+  list-style: none;
+  background-color: #dcf2ff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+.Item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+.li_img {
+  width: 300px;
+  object-fit: cover; /* Evita que la imagen se estire o se deforme */
+  display: block; /* Elimina espacios en blanco no deseados debajo de la imagen */
+}
+button {
+  background-color: #f9cbc4;
+  color: black;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 5px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.btn_control {
+  width: 40px;
+}
