@@ -20,7 +20,7 @@ export function FormularioProducto({ datosForm, manejarCambio, manejarCambioImag
           type="text"
           placeholder="Ej: Teclado Mecánico"
           name="nombre"
-          value={datosForm}
+          value={datosForm.nombre}
           onChange={manejarCambio}
         />
       </div>
@@ -30,7 +30,7 @@ export function FormularioProducto({ datosForm, manejarCambio, manejarCambioImag
           type="number"
           placeholder="Ej: 95"
           name="precio"
-          value={datosForm}
+          value={datosForm.precio}
           onChange={manejarCambio}
         />
       </div>
@@ -40,7 +40,7 @@ export function FormularioProducto({ datosForm, manejarCambio, manejarCambioImag
           type="number"
           placeholder="Ej: 5"
           name="stock"
-          value={datosForm}
+          value={datosForm.stock}
           onChange={manejarCambio}
         />
       </div>
@@ -50,7 +50,6 @@ export function FormularioProducto({ datosForm, manejarCambio, manejarCambioImag
           type="file"
           placeholder="https://..." 
           name="urlImagen"
-          value={datosForm}
           onChange={manejarCambioImagen}          
         />
       </div>

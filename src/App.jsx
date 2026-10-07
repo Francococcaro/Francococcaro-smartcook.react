@@ -4,7 +4,7 @@ import "./App.css";
 import styles from "./components/Layout/Layout.module.css";
 import { ItemListContainer } from "./components/TarjetaProducto/ItemListContainer/ItemListContainer";
 import { Layout } from "./components/Layout/Layout";
-import { FormularioProducto } from "./components/Formulario/FormularioProductos/FormularioProducto.jsx";
+import { FormularioContainer } from "./components/Formulario/FormularioContainer/FormularioContainer";
 
 function App() {
   return (
@@ -63,7 +63,7 @@ function App() {
           <ItemListContainer Mensaje="Nuestros productos destacados" />
         </div>
         <div>
-          <FormularioProducto />
+          <FormularioContainer />
         </div>
       </div>      
     </Layout>

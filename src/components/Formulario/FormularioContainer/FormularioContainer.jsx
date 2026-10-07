@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { FormularioProducto } from "../FormularioProductos/FormularioProducto";
+//import { FormularioProducto } from "../FormularioProductos/FormularioProducto";
+import { FormularioProducto } from "../FormularioProductos/FormularioProducto.jsx";
 export function FormularioContainer() {
   const [datosForm, setDatosForm] = useState({
     id: "",
@@ -13,7 +14,7 @@ export function FormularioContainer() {
   const manejarCambio = (evento) => {
     let { name, value } = evento.target;
 
-    if(name === "precio" || name === "stock"){
+    if (name === "precio" || name === "stock") {
       value = parseFloat(value);
     }
 
