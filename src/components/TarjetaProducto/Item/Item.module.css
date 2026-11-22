@@ -35,3 +35,12 @@ button {
 .btn_control {
   width: 40px;
 }
+.Link {
+  background-color: #f9cbc4;
+  color: black;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 5px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-decoration: none;
+}

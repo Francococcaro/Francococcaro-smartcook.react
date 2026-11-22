@@ -2,6 +2,8 @@ import { ItemList } from "../ItemList/ItemList";
 import styles from "./ItemListContainer.module.css";
 import { useState, useEffect } from "react";
 
+import {readProductos} from "../../../services/productosService.js";
+
 export function ItemListContainer({ Mensaje }) {
   const [productos, setProductos] = useState([]);
   const [error, setError] = useState(null);
@@ -17,7 +19,7 @@ export function ItemListContainer({ Mensaje }) {
   console.log("Se actualizaron los estados del carrito!");
 }, [cantidades]);
   
-  useEffect(() => {
+  /*useEffect(() => {
   const obtenerProductos = async () => {
 
     try {
@@ -35,18 +37,11 @@ export function ItemListContainer({ Mensaje }) {
     }
   };
   obtenerProductos();
-}, []);
-
-    /*fetch("/data/productos.json")
-      .then((respuesta) => {
-        if (!respuesta.ok) {
-          throw new Error("No se pudo cargar la información de los productos");
-        }
-        return respuesta.json();
-      })
-      .then((datos) => {
-        setProductos(datos);
-      })
+}, []);*/
+  useEffect(() => {
+    readProductos().then((datos) => {
+      setProductos(datos);
+    })
       .catch((error) => {
         setError(error.message);
       })
@@ -54,7 +49,7 @@ export function ItemListContainer({ Mensaje }) {
         setCargando(false);
       });
 
-  }, []);*/
+  }, []);
 
   if (cargando) {
     return <p>Cargando productos, por favor espere...</p>;

@@ -41,3 +41,11 @@
   height: 100%;
   object-fit: cover;
 }
+.section_div2 {
+  background-color: #184E52;
+  padding: 20px;
+  margin: 10px 100px;
+  text-align: center;
+  border-radius: 10px;
+  color: white;
+}

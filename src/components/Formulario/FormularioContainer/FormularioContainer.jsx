@@ -1,5 +1,4 @@
 import { useState } from "react";
-//import { FormularioProducto } from "../FormularioProductos/FormularioProducto";
 import { FormularioProducto } from "../FormularioProductos/FormularioProducto.jsx";
 export function FormularioContainer() {
   const [datosForm, setDatosForm] = useState({

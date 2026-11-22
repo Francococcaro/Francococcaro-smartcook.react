@@ -1,59 +1,109 @@
-
 import styles from "./FormularioProducto.module.css";
-export function FormularioProducto({ datosForm, manejarCambio, manejarCambioImagen, manejarEnvio }) {
+export function FormularioProducto({
+  datosForm,
+  manejarCambio,
+  manejarCambioImagen,
+  manejarEnvio,
+  modoEdicion = false,
+  onCancelar,
+}) {
   return (
     <form className={styles.FormularioProducto} onSubmit={manejarEnvio}>
-      <h3>Agregar Nuevo Producto</h3>
+      <h3>{modoEdicion ? "Editar producto" : "Agregar nuevo producto"}</h3>
       <div>
-        <label htmlFor="id">ID_Producto:
-          <input 
-            type="text" 
-            placeholder="Ej: 123452"
-            name="id" 
-            onChange={manejarCambio} 
-          />
-        </label>
+        <label htmlFor="id">ID:</label>
+        <input
+          id="id"
+          type="text"
+          placeholder="Ej: 123452"
+          name="id"
+          value={datosForm.id}
+          onChange={manejarCambio}
+          disabled={modoEdicion}
+          required
+        />
       </div>
       <div>
-        <label htmlFor="nombre">Nombre del Producto:</label>
+        <label htmlFor="nombre">Nombre:</label>
         <input
+          id="nombre"
           type="text"
           placeholder="Ej: Teclado Mecánico"
           name="nombre"
           value={datosForm.nombre}
           onChange={manejarCambio}
+          required
         />
       </div>
       <div>
         <label htmlFor="precio">Precio:</label>
         <input
+          id="precio"
           type="number"
           placeholder="Ej: 95"
           name="precio"
           value={datosForm.precio}
           onChange={manejarCambio}
+          min="0.01"
+          step="0.01"
+          required
         />
       </div>
       <div>
         <label htmlFor="stock">Stock:</label>
         <input
+          id="stock"
           type="number"
           placeholder="Ej: 5"
           name="stock"
           value={datosForm.stock}
           onChange={manejarCambio}
+          min="0"
+          step="1"
+          required
         />
       </div>
       <div>
         <label htmlFor="urlImagen">Imagen:</label>
         <input
+          id="imagen"
           type="file"
-          placeholder="https://..." 
+          ///type="url"
+          placeholder="https://..."
           name="urlImagen"
-          onChange={manejarCambioImagen}          
+          value={datosForm.imagen}
+          onChange={manejarCambioImagen}
         />
       </div>
-      <button type="submit">Guardar Producto</button>
+      <div>
+        <label htmlFor="detalles">Detalles:</label>
+        <textarea
+          id="detalles"
+          name="detalles"
+          value={datosForm.detalles}
+          onChange={manejarCambio}
+        />
+      </div>
+      <div>
+        <label htmlFor="oferta">Producto en oferta:</label>
+        <input
+          id="oferta"
+          type="checkbox"
+          name="oferta"
+          checked={datosForm.oferta}
+          onChange={manejarCambio}
+        />
+      </div>
+
+      <button type="submit">
+        {modoEdicion ? "Actualizar producto" : "Guardar producto"}
+      </button>
+
+      {modoEdicion && (
+        <button type="button" onClick={onCancelar}>
+          Cancelar edición
+        </button>
+      )}
     </form>
   );
 }

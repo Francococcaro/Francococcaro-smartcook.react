@@ -1,10 +1,8 @@
-import { EquipoListContainer } from "../TaarjetaEquipo/EquipoListContainer/EquipoListContainer";
 import styles from "./Footer.module.css";
 function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={styles.footer_container}>
-        <EquipoListContainer Mensaje="Nuestro Equipo" />
         <h3>SmartCook</h3>
         <p>Comida casera lista en minutos.</p>
       </div>
