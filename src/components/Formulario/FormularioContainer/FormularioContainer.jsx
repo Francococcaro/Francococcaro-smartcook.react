@@ -1,4 +1,4 @@
-import { useState } from "react";
+/*import { useState } from "react";
 import { FormularioProducto } from "../FormularioProductos/FormularioProducto.jsx";
 export function FormularioContainer() {
   const [datosForm, setDatosForm] = useState({
@@ -73,4 +73,4 @@ export function FormularioContainer() {
       manejarCambioImagen={manejarCambioImagen}
     />
   );
-}
+}*/

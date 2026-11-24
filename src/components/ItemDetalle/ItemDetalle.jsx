@@ -2,20 +2,16 @@ import { useParams } from "react-router-dom";
 import styles from "./ItemDetalle.module.css";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { readProductos } from "../../services/productosService.js";
+
 export function ItemDetalle({ Mensaje }) {
   const { id } = useParams();
   const [productos, setProductos] = useState([]);
-  const [cargando, setCargando] = useState([false]);
+  const [cargando, setCargando] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch("/data/productos.json")
-      .then((respuesta) => {
-        if (!respuesta.ok) {
-          throw new Error("No se pudo cargar la información de los productos");
-        }
-        return respuesta.json();
-      })
+    readProductos()
       .then((datos) => {
         setProductos(datos);
       })
@@ -28,24 +24,24 @@ export function ItemDetalle({ Mensaje }) {
   }, []);
 
   if (cargando) {
-    return <p>Cargando producto...</p>;
+    return <p>Cargando productos, por favor espere...</p>;
   }
-
   if (error) {
     return <p>Error: {error}</p>;
   }
 
-  const productoId = productos.find((producto) => producto.id == id);
+  const productoId = productos.find(
+    (producto) => String(producto.id) === String(id),
+  );
 
   if (!productoId) {
     return <p>Producto no encontrado</p>;
   }
 
   return (
-    <>
-    <h2>{Mensaje}</h2>
-    <div className={styles.ItemDetalle}>
-        
+    <div className={styles.container}>
+      <h2>{Mensaje}</h2>
+      <div className={styles.ItemDetalle}>        
         <img
           src={productoId?.imagen}
           alt={productoId?.nombre}
@@ -53,9 +49,11 @@ export function ItemDetalle({ Mensaje }) {
         />
         <p>{productoId?.nombre}</p>
         <p>Precio: ${productoId?.precio}</p>
-        <p>{productoId?.descripcion}</p>
-        <Link className={styles.Link} to='/productos'>Volver a Productos</Link>
+        <p>{productoId.detalles || productoId.descripcion}</p>
+        <Link className={styles.Link} to="/productos">
+          Volver a Productos
+        </Link>
+      </div>
     </div>
-    </>
   );
 }

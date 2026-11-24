@@ -25,8 +25,7 @@ function ListadoProductos({ productos, onEditar, onEliminar }) {
             <button
               type="button"
               className={styles.eliminar}
-              onClick={() => onEliminar(producto.id)}
-            >
+              onClick={() => onEliminar(producto.id)}>
               Eliminar
             </button>
           </div>

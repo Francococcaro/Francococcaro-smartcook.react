@@ -2,7 +2,6 @@ import styles from "./FormularioProducto.module.css";
 export function FormularioProducto({
   datosForm,
   manejarCambio,
-  manejarCambioImagen,
   manejarEnvio,
   modoEdicion = false,
   onCancelar,
@@ -64,15 +63,14 @@ export function FormularioProducto({
         />
       </div>
       <div>
-        <label htmlFor="urlImagen">Imagen:</label>
+        <label htmlFor="imagen">Imagen (URL):</label>
         <input
           id="imagen"
-          type="file"
-          ///type="url"
+          type="url"
           placeholder="https://..."
-          name="urlImagen"
+          name="imagen"
           value={datosForm.imagen}
-          onChange={manejarCambioImagen}
+          onChange={manejarCambio}
         />
       </div>
       <div>

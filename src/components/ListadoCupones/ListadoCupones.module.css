@@ -1,0 +1,30 @@
+.lista {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 0.5rem;
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+.info {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.eliminar {
+    background-color: #c0392b;
+    color: white;
+    border: none;
+    padding: 0.4rem 0.75rem;
+    border-radius: 4px;
+    cursor: pointer;
+}

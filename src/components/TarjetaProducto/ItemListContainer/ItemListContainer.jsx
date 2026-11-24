@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 
 import {readProductos} from "../../../services/productosService.js";
 
-export function ItemListContainer({ Mensaje }) {
+export function ItemListContainer({ Mensaje, soloOfertas = false }) {
   const [productos, setProductos] = useState([]);
   const [error, setError] = useState(null);
   const [cargando, setCargando] = useState(true);
@@ -39,17 +39,28 @@ export function ItemListContainer({ Mensaje }) {
   obtenerProductos();
 }, []);*/
   useEffect(() => {
-    readProductos().then((datos) => {
-      setProductos(datos);
-    })
+    
+    /* const productosDB = collection(db, "productos");
+    getDocs(productosDB).then((res) => {
+      setProductos(res.docs.map((doc) => ({ id: doc.id, ...doc.data() })));*/
+
+    setCargando(true);
+    readProductos()
+      .then((datos) => {
+        if (soloOfertas) {
+          const filtrados = datos.filter((producto) => producto.oferta === true);
+          setProductos(filtrados);
+        } else {
+          setProductos(datos);
+        }
+      })
       .catch((error) => {
         setError(error.message);
       })
       .finally(() => {
         setCargando(false);
       });
-
-  }, []);
+  }, [soloOfertas]);
 
   if (cargando) {
     return <p>Cargando productos, por favor espere...</p>;
@@ -58,13 +69,12 @@ export function ItemListContainer({ Mensaje }) {
     return <p>Error: {error}</p>;
   }
 
-  const productosFiltrados = productos.filter((prod) => prod.stock > 5);
   return (
     <>
       <h2 className={styles.subtitulo}>{Mensaje}</h2>
       <div className={styles.productos}>
         <ItemList
-          productos={productosFiltrados}
+          productos={productos}
           favoritos={favoritos}
           setFavoritos={setFavoritos}
           cantidades={cantidades}

@@ -1,5 +1,7 @@
 .ItemDetalle {
-  width: 300px;
+  width: 400px;
+  padding: 20px;
+  margin: 20px 0;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -47,6 +49,7 @@ main {
   justify-content: center;
   text-align: center;
   align-content: space-around;
+  padding: 20px;
 }
 .Link {
   background-color: #f9cbc4;

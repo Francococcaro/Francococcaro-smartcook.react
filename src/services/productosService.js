@@ -20,7 +20,7 @@ export const crearProducto = async (producto) => {
 		    throw new Error("El ID es obligatorio.");
 		}
 
-		const idLimpio = id.trim();
+	const idLimpio = id.trim();
     const docRef = doc(db, "productos", idLimpio);
     const documentoExistente = await getDoc(docRef);    
 

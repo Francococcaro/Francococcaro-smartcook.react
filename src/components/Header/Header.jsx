@@ -22,8 +22,8 @@ function Header() {
         <Link to="/" className={styles.a}>Inicio</Link>
         <Link to="/productos" className={styles.a}>Productos</Link>
         <Link to="/nosotros" className={styles.a}>Nosotros</Link>
-        <Link to="/formulario" className={styles.a}>Gestion de Productos</Link>
-        <Link to="/gestion" className={styles.enlace}>Gestión</Link>
+        <Link to="/gestion" className={styles.a}>Gestion de Productos</Link>
+        <Link to="/cupones" className={styles.a}>Cupones</Link>
         <Link to="/carrito" className={styles.carrito}>🛒 {totalItems > 0 && <span>{totalItems}</span>}</Link>
       </nav>
     </header>

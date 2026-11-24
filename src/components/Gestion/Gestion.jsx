@@ -19,7 +19,15 @@ const estadoInicialForm = {
   oferta: false,
 };
 
-const manejarCambio = (evento) => {
+function Gestion() {
+  const [datosForm, setDatosForm] = useState(estadoInicialForm);
+  const [productos, setProductos] = useState([]);
+  const [cargando, setCargando] = useState(true);
+  const [error, setError] = useState(null);
+  const [productoAEditar, setProductoAEditar] = useState(null);
+  const modoEdicion = Boolean(productoAEditar);
+
+  const manejarCambio = (evento) => {
   const { name, value, type, checked } = evento.target;
 
   setDatosForm((prev) => ({
@@ -85,9 +93,6 @@ const manejarEnvio = async (evento) => {
     alert("No se pudo guardar el producto.");
   }
 };
-const manejarCambioImagen = (evento) => {
-  setImagenFile(evento.target.files[0]);
-};
 const manejarEditar = (producto) => {
   setProductoAEditar({ ...producto });
 };
@@ -120,14 +125,6 @@ const manejarEliminar = async (id) => {
     alert("No se pudo eliminar el producto.");
   }
 };
-
-function Gestion() {
-  const [datosForm, setDatosForm] = useState(estadoInicialForm);
-  const [productos, setProductos] = useState([]);
-  const [cargando, setCargando] = useState(true);
-  const [error, setError] = useState(null);
-  const [productoAEditar, setProductoAEditar] = useState(null);
-  const modoEdicion = Boolean(productoAEditar);
 
   useEffect(() => {
     const cargarProductos = async () => {
@@ -170,7 +167,8 @@ function Gestion() {
 
   return (
     <div className={styles.container}>
-      <h2>Gestión de productos</h2>
+      <h2>Gestión de productos</h2><br />
+      <h2>Listado de productos</h2><br />
       <ListadoProductos
         productos={productos}
         onEditar={manejarEditar}
@@ -180,7 +178,6 @@ function Gestion() {
         datosForm={datosForm}
         manejarCambio={manejarCambio}
         manejarEnvio={manejarEnvio}
-        manejarCambioImagen={manejarCambioImagen}
         modoEdicion={modoEdicion}
         onCancelar={cancelarEdicion}
       />

@@ -63,13 +63,12 @@ export function ItemListContainer({ Mensaje }) {
     return <p>Error: {error}</p>;
   }
 
-  const productosFiltrados = productos.filter((prod) => prod.stock > 5);
   return (
     <>
       <h2 className={styles.subtitulo}>{Mensaje}</h2>
       <div className={styles.productos}>
         <ItemList
-          productos={productosFiltrados}
+          productos={productos}
           favoritos={favoritos}
           setFavoritos={setFavoritos}
           cantidades={cantidades}

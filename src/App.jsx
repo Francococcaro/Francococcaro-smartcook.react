@@ -1,26 +1,26 @@
 import "./App.css";
 //import "bootswatch/dist/Sandstone/bootstrap.min.css";
-import styles from "./components/Layout/Layout.module.css";
-import { ItemListContainer } from "./components/TarjetaProducto/ItemListContainer/ItemListContainerjson";
+import { ItemListContainer } from "./components/TarjetaProducto/ItemListContainer/ItemListContainer";
+import { Inicio } from "./components/Inicio/Inicio";
 import { Layout } from "./components/Layout/Layout";
-import { FormularioContainer } from "./components/Formulario/FormularioContainer/FormularioContainer";
-import { EquipoListContainer } from "./components/TaarjetaEquipo/EquipoListContainer/EquipoListContainer";
+import { EquipoListContainer } from "./components/TaarjetaEquipo/EquipoListContainer/EquipoListContainer.jsx";
 import { Routes, Route } from "react-router-dom";
 import { ItemDetalle } from "./components/ItemDetalle/ItemDetalle";
 import { Carrito } from "./components/Carrito/Carrito";
 import Gestion from "./components/Gestion/Gestion.jsx";
+import GestionCupones from "./components/GestionCupones/GestionCupones.jsx";
 
 function App() {
   return (
     <Routes>
       <Route element={<Layout />}>
-        <Route path="/" element={<h1 style={{ fontSize: "30px", lineHeight: "1.5", color: "#184E52" }}>¿Por qué elegir SmartCook?</h1>} />
-        <Route path="/productos" element={<ItemListContainer Mensaje={"Productos destacados"} />} />
+        <Route path="/" element={<Inicio />} />
+        <Route path="/productos" element={<ItemListContainer Mensaje={"Productos destacados"}/>} />
         <Route path="/productos/:id" element={<ItemDetalle Mensaje={"Detalle del producto"}/>}  />
         <Route path="/nosotros" element={<EquipoListContainer Mensaje={"Nuestro equipo"} />} />
-        <Route path="/formulario" element={<FormularioContainer />} />
         <Route path="/carrito" element={<Carrito />} />
         <Route path="/gestion" element={<Gestion />} />
+        <Route path="/cupones" element={<GestionCupones />} />
         <Route path="*" element={<h1>Página no encontrada</h1>} />
       </Route>
     </Routes>

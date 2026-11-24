@@ -1,16 +1,84 @@
-# React + Vite
+# SmartCook
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicación web para explorar productos y ofertas de comida, consultar detalles, gestionar un carrito y administrar productos y cupones.
 
-Currently, two official plugins are available:
+## Requisitos
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Node.js `^20.19.0` o `>=22.12.0`
+- npm (incluido con Node.js)
 
-## React Compiler
+## Instalación y ejecución local
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+1. Clona el repositorio y entra en la carpeta:
 
-## Expanding the ESLint configuration
+   ```bash
+   git clone https://github.com/Francococcaro/Francococcaro-smartcook.react.git
+   cd Francococcaro-smartcook.react
+   ```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+2. Instala las dependencias:
+
+   ```bash
+   npm install
+   ```
+
+3. Inicia el servidor de desarrollo:
+
+   ```bash
+   npm run dev
+   ```
+
+4. Abre en el navegador la dirección que muestra Vite en la terminal, normalmente `http://localhost:5173`.
+
+## Comandos disponibles
+
+- `npm run dev`: inicia el servidor local con recarga en caliente.
+- `npm run build`: genera la versión de producción en `dist/`.
+- `npm run preview`: sirve localmente la compilación de producción (ejecuta primero `npm run build`).
+- `npm run lint`: analiza el código con ESLint.
+
+## Funcionalidades
+
+- Página de inicio y ofertas destacadas.
+- Catálogo y detalle de productos.
+- Carrito de compras.
+- Sección informativa del equipo.
+- Gestión de productos y cupones.
+- Persistencia de datos mediante Firebase Firestore.
+
+## Rutas principales
+
+| Ruta | Contenido |
+| :--- | :--- |
+| `/` | Inicio |
+| `/productos` | Catálogo |
+| `/productos/:id` | Detalle de un producto |
+| `/nosotros` | Equipo |
+| `/carrito` | Carrito |
+| `/gestion` | Gestión de productos |
+| `/cupones` | Gestión de cupones |
+
+## Estructura del proyecto
+
+```text
+src/
+├── components/   # Componentes y vistas de la aplicación
+├── context/      # Contexto compartido, incluido el estado del carrito
+├── firestore/    # Inicialización y configuración de Firebase
+└── services/     # Operaciones de acceso a datos
+public/           # Recursos estáticos
+dist/             # Archivos generados por la compilación
+```
+
+## Firebase
+
+La aplicación usa **Firebase Firestore**. Antes de ejecutar la aplicación, verifica que la configuración del proyecto Firebase y sus reglas de acceso sean válidas para las operaciones que utiliza la aplicación. No publiques credenciales privadas ni agregues secretos al repositorio.
+
+## Compilación para producción
+
+```bash
+npm run build
+npm run preview
+```
+
+El primer comando crea la compilación optimizada en `dist/`; el segundo permite revisarla localmente.
