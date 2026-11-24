@@ -25,7 +25,9 @@ export function Carrito({children}) {
           <p>Cantidad: {item.quantity}</p>
           <p>Precio unitario: ${item.precio}</p>
           <p>Subtotal: ${item.precio * item.quantity}</p>
-          <button onClick={() => clearItem(item.id)}>Eliminar Item</button>
+          <button className={styles.eliminar} onClick={() => clearItem(item.id)}>
+            Eliminar
+          </button>
         </div>
       ))}
 
