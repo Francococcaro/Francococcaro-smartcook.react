@@ -26,13 +26,15 @@
 }
 .mini_item_img {
   display: flex;
+  flex-wrap: wrap;
   padding: 20px;
   width: auto;
-  height: 130px;
   border-radius: 150%;
 }
 .section_div {
+  display: flex;
   text-align: center;
+  align-items: center;
 }
 .section_div_img {
   display: flex;
@@ -42,13 +44,12 @@
   object-fit: cover;
 }
 .section_div2 {
+  display: flex;
   background-color: #184E52;
   padding: 20px;
-  margin: 10px 100px;
-  text-align: center;
+  margin: 10px 50px;
   border-radius: 10px;
   color: white;
-  max-width: 1300px;
 }
 .section_div3 {
   padding: 20px;
